@@ -30,9 +30,13 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [],
+            "scripts": ["node_modules/@fortawesome/fontawesome-free/js/all.min.js",
+            "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+          ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -44,13 +48,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "10mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "mb",
+                  "maximumError": "4mb"
                 }
               ],
               "outputHashing": "all"

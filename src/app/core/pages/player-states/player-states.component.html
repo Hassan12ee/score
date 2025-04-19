@@ -1,1 +1,103 @@
-<p>player-states works!</p>
+
+<div class="container-fluid mt-85 py-4">
+  <!-- Player Header -->
+  <div class="player-header bg-dark text-white p-4 rounded-3 mb-4">
+    <div class="row align-items-center">
+      <div class="col-md-2">
+        <img [src]="playerImage" [alt]="playerName" class="player-image rounded-circle">
+      </div>
+      <div class="col-md-6">
+        <h1 class="display-4 mb-2">{{playerName}}</h1>
+        <div class="d-flex align-items-center mb-3">
+          <img [src]="teamLogo" [alt]="teamName" class="team-logo me-2">
+          <span class="h5 mb-0">{{teamName}}</span>
+        </div>
+        <div class="player-info">
+          <div class="row g-3">
+            <div class="col-auto">
+              <div class="info-item">
+                <small class="text-muted d-block">Shirt</small>
+                <span class="h6 mb-0">{{playerNumber}}</span>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="info-item">
+                <small class="text-muted d-block">Age</small>
+                <span class="h6 mb-0">{{age}} years</span>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="info-item">
+                <small class="text-muted d-block">Preferred foot</small>
+                <span class="h6 mb-0">{{preferredFoot}}</span>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="info-item">
+                <small class="text-muted d-block">Position</small>
+                <span class="h6 mb-0">{{position}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 text-md-end">
+        <button class="btn btn-outline-light me-2">Follow</button>
+        <button class="btn btn-primary">
+          <i class="bi bi-calendar-plus me-2"></i>
+          Sync to calendar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Player Traits -->
+  <div class="card mb-4">
+    <div class="card-header">
+      <h3 class="card-title mb-0">Player Traits</h3>
+      <small class="text-muted">Stats compared to other attacking midfielders/wingers</small>
+    </div>
+    <div class="card-body">
+      <div class="row g-4">
+        <div class="col-md-4" *ngFor="let trait of traits | keyvalue">
+          <div class="trait-item">
+            <div class="d-flex justify-content-between mb-1">
+              <span>{{trait.key}}</span>
+              <span class="text-primary">{{trait.value}}%</span>
+            </div>
+            <div class="progress" style="height: 6px;">
+              <div class="progress-bar"
+                   [style.width]="trait.value + '%'"
+                   [class.bg-success]="trait.value > 66"
+                   [class.bg-warning]="trait.value > 33 && trait.value <= 66"
+                   [class.bg-danger]="trait.value <= 33">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Season Stats -->
+  <div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+      <h3 class="card-title mb-0">Premier League 2023/24</h3>
+      <div class="btn-group">
+        <button class="btn btn-outline-primary active">Overview</button>
+        <button class="btn btn-outline-primary">Stats</button>
+        <button class="btn btn-outline-primary">Matches</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row g-4">
+        <div class="col-md-3 col-6" *ngFor="let stat of stats | keyvalue">
+          <div class="stat-item text-center p-3 border rounded">
+            <h2 class="mb-2">{{stat.value}}</h2>
+            <span class="text-muted">{{stat.key}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

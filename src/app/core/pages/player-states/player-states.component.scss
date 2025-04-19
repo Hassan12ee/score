@@ -1,0 +1,145 @@
+.player-header {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.info-item {
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  backdrop-filter: blur(10px);
+
+  small {
+    opacity: 0.8;
+  }
+}
+
+.trait-item {
+  .progress {
+    height: 6px;
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .progress-bar {
+    transition: width 1s ease-in-out;
+  }
+}
+
+.stat-item {
+  background: #fff;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #198754;
+    margin-bottom: 0.5rem;
+  }
+
+  span {
+    font-size: 0.875rem;
+    color: #6c757d;
+  }
+}
+
+.btn-group {
+  .btn {
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+
+    &.active {
+      background-color: #198754;
+      border-color: #198754;
+      color: #fff;
+    }
+  }
+}
+
+.card {
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+  .card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e9ecef;
+    padding: 1.25rem;
+  }
+
+  .card-title {
+    font-weight: 600;
+    color: #2d2d2d;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .player-header {
+    text-align: center;
+
+    .player-image {
+      margin-bottom: 1rem;
+    }
+
+    .col-md-4 {
+      margin-top: 1rem;
+      text-align: center;
+    }
+  }
+
+  .stat-item {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+}
+.player-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 4px solid rgba(255,255,255,0.2);
+}
+
+.team-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.info-item {
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+}
+
+.trait-item {
+  margin-bottom: 1rem;
+}
+
+.progress {
+  background-color: #e9ecef;
+  border-radius: 3px;
+}
+
+.stat-item {
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #198754;
+  }
+}

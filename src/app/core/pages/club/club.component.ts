@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { afterNextRender, Component, inject, runInInjectionContext, EnvironmentInjector } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -16,6 +16,7 @@ interface Club {
   styleUrls: ['./club.component.scss']
 })
 export class ClubComponent {
+  private injector = inject(EnvironmentInjector);
   clubs: Club[] = [
     {
       name: 'Arsenal',
@@ -122,8 +123,12 @@ export class ClubComponent {
   constructor(private router: Router) {}
 
   navigateToSquad(club: Club) {
-    // Store selected club data in localStorage for squad component
-    localStorage.setItem('selectedClub', JSON.stringify(club));
-    this.router.navigate(['/squad']);
+    runInInjectionContext(this.injector, () => {
+      afterNextRender(() => {
+        localStorage.setItem('selectedClub', JSON.stringify(club));
+        this.router.navigate(['/squad']);
+      });
+
+    });
   }
 }

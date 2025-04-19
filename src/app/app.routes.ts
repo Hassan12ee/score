@@ -7,6 +7,8 @@ import { NewsComponent } from './core/pages/news/news.component';
 import { ClubComponent } from './core/pages/club/club.component';
 import { ScoreboardComponent } from './core/pages/scoreboard/scoreboard.component';
 import { PlayerStatesComponent } from './core/pages/player-states/player-states.component';
+import { SquadComponent } from './core/pages/squad/squad.component';
+
 
 export const routes: Routes = [
   {path:"",redirectTo:"Home",pathMatch:"full"},
@@ -17,6 +19,7 @@ export const routes: Routes = [
   {path: "club",component:ClubComponent},
   {path: "scoreboard",component:ScoreboardComponent},
   {path: "playerStates",component:PlayerStatesComponent},
+  {path: "squad",component:SquadComponent},
 
 
   {path:"**",component: Page404Component}

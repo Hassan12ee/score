@@ -19,7 +19,7 @@ interface Club {
 @Component({
   selector: 'app-squad',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule , ],
   templateUrl: './squad.component.html',
   styleUrl: './squad.component.scss'
 })
@@ -33,6 +33,20 @@ export class SquadComponent implements OnInit {
   };
 
   keepers: Player[] = [
+    {
+      name: 'Alisson Becker',
+      nationality: 'Brazil',
+      position: 'Goalkeeper',
+      number: 1,
+      image: 'https://resources.premierleague.com/premierleague/photos/players/250x250/p116535.png'
+    },
+    {
+      name: 'Alisson Becker',
+      nationality: 'Brazil',
+      position: 'Goalkeeper',
+      number: 1,
+      image: 'https://resources.premierleague.com/premierleague/photos/players/250x250/p116535.png'
+    },
     {
       name: 'Alisson Becker',
       nationality: 'Brazil',

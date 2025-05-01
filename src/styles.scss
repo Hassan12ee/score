@@ -1,20 +1,24 @@
-// @import url("https://fonts.googleapis.com/css2?family=Freehand&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
+ @import url("https://fonts.googleapis.com/css2?family=Freehand&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
   --color-dark-1: #000000;
   --color-dark-2: #b8c2ce;
-  --color-light-1: rgb(255, 255, 255);
-  --color-light-2: rgb(235, 238, 243);
+  --color-light-1:#D4C9BE ;
+  --color-light-2: #F1EFEC;
 }
-// .signupform {
-//   padding: 20px 0;
-//   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-// align-items: center;
-// justify-content: center;
-// }
-// .big-font{
-//   font-size: 45px;
-// }
+.signupform {
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+align-items: center;
+justify-content: center;
+}
+.bg-main{
+  background-color: var(--color-light-2) !important;
+}
+
+.big-font{
+  font-size: 45px;
+}
 .mt-85{
 margin-top:85px ;
 }
@@ -28,7 +32,7 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: var(--color-light-2);
+  background-color: var(--color-light-1) !important;
 }
 .hero {
   height: 100vh;
@@ -44,6 +48,7 @@ transition: 2s all;
 }
 .container{
   height: 100%;
+  width: 100%;
 }
 
 .hero_content{
@@ -143,6 +148,9 @@ transition: 2s all;
 
 }
 // /* navbar */
+.navbar {
+  background-color: var(--color-light-2) !important;
+}
 .navbar-logo{
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
@@ -180,7 +188,7 @@ transition: 2s all;
 }
 
 .active {
-  background-color: blue;
+
   color: red !important;
   border-radius: 5px;
 

@@ -32,7 +32,7 @@ interface PlayerTraits {
 })
 
 export class PlayerStatesComponent implements OnInit {
- playerName = 'Mohamed Salah';
+  playerName = 'Mohamed Salah';
   playerNumber = 11;
   teamName = 'Liverpool';
   teamLogo = 'https://resources.premierleague.com/premierleague/badges/t14.png';
